@@ -25,46 +25,9 @@ public class BankingApp {
 			Connection connection = DriverManager.getConnection(url, username, password);
 			Scanner scanner = new Scanner(System.in);
 			User user = new User(connection,scanner);
-			Accounts accounts = new Accounts();
-			AccountManager accountManager = new AccountManager();
 			
-			while(true)
-			{
-				System.out.println("***WELCOME TO BANKING SYSTEM***");
-				System.out.println();
-				System.out.println("1.Register");
-				System.out.println("2.Login");
-				System.out.println("3.Exit");
-				System.out.println("Enter your choise");
-				int choise = scanner.nextInt();
-				
-				switch(choise) {
-				
-				
-				case 1:
-					user.register();
-					break;
-					
-					
-				case 2:
-					user.login();
-					break;
-					
-				
-				}
-				
-				
-				
-				
-				
-				
-				
-			}
-			
-			
-			
-			
-
+//			user.register();
+			user.login();
 		} 
 		catch (SQLException e) {
 

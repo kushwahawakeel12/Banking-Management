@@ -23,14 +23,10 @@ public class User {
 		System.out.print("Enter full name: ");
 		String full_name = scanner.nextLine();
 		scanner.hasNextLine();
-		
 		System.out.print("Enter email: ");
 		String email = scanner.nextLine();
-		scanner.hasNextLine();
-		
 		System.out.print("Enter password: ");
 		String password = scanner.nextLine();
-		scanner.hasNextLine();
 
 		if (user_exist(email)) {
 			System.out.println("User Already Exists for this Email Address!!");
@@ -43,14 +39,13 @@ public class User {
 		
 		
 		try {
-			PreparedStatement preparestatement = connection.prepareStatement(register_query);
+			PreparedStatement prepareStatement = connection.prepareStatement(register_query);
 
-			preparestatement.setString(1, full_name);
-			preparestatement.setString(2, email);
-			preparestatement.setString(3, password);
-			
+			prepareStatement.setString(1, full_name);
+			prepareStatement.setString(2, email);
+			prepareStatement.setString(3, password);
 
-			int i =preparestatement.executeUpdate();
+			int i = prepareStatement.executeUpdate();
 			if (i > 0) 
 			{
 				System.out.println("Registration successfull!!");
@@ -74,11 +69,9 @@ public class User {
 		
 	System.out.print("Enter you email: ");
 	String email = scanner.nextLine();
-	scanner.hasNextLine();
 	
 	System.out.print("Enter password");
 	String password = scanner.nextLine();
-	scanner.hasNextLine();
 	
 	String login_query = "SELECT * FROM user WHERE email=? AND password =?";
 	
