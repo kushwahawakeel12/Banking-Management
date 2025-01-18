@@ -1,0 +1,16 @@
+package firstProject.main.practice;
+
+
+public class Practice {
+	int a = 12;
+	Practice()
+	{
+		System.out.println(a);
+	}
+
+	public static void main(String[] args) {
+	
+		
+    
+	}
+}

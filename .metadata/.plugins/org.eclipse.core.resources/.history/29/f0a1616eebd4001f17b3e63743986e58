@@ -1,0 +1,17 @@
+package firstProject.main.practice;
+
+import java.util.Scanner;
+
+public class Practice {
+
+	public static void main(String[] args) {
+	
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter your name ");
+    String name = sc.nextLine();
+    System.out.print("Enter you age");
+    int age = sc.nextInt();
+    sc.nextLine();
+	}
+
+}

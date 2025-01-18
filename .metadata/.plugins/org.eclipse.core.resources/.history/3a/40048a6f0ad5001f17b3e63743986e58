@@ -1,0 +1,19 @@
+package com.Banking_management_system;
+
+import java.sql.Connection;
+import java.util.Scanner;
+
+public class User {
+
+	public User(Connection connection, Scanner scanner) {
+	
+		
+	}
+	void register()
+	{
+		
+	System.out.println("Enter you name");
+	}
+	
+
+}

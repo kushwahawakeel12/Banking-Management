@@ -1,0 +1,39 @@
+package com.Banking_management_system;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class BankingApp {
+
+	public static void main(String[] args) throws ClassNotFoundException {
+
+		final String url = "jdbc:mysql://localhost:3306/banking_system";
+		final String username = "root";
+		final String password = "123456789";
+
+		// load Driver
+		Class.forName("com.mysql.cj.jdbc.Driver");
+
+		
+		
+		
+		// connetion
+
+		try {
+			Connection connection = DriverManager.getConnection(url, username, password);
+			Scanner scanner = new Scanner(System.in);
+			User user = new User(connection,scanner);
+			
+//			user.register();
+			user.login();
+		} 
+		catch (SQLException e) {
+
+			e.printStackTrace();
+		}
+
+	}
+
+}

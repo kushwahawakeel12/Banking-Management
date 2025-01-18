@@ -1,0 +1,28 @@
+package firstProject.main.practice;
+public class Practice {
+    // Instance variables
+    private String name;
+    private int age;
+
+    // Constructor
+    public Practice(String name, int age) {
+        // Using 'this' to refer to instance variables
+        this.name = name;
+        this.age = age;
+    }
+
+    // Method to display student details
+    public void display() {
+        System.out.println("Name: " + this.name);
+        System.out.println("Age: " + this.age);
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+    	Practice Practice1= new Practice("Alice", 20);
+    	Practice1.display();
+
+        Practice Practice2= new Practice("Bob", 22);
+        Practice2.display();
+    }
+}

@@ -1,0 +1,68 @@
+package com.Banking_management_system;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class User {
+
+	private Connection connection;
+	private Scanner scanner;
+
+	public User(Connection connection, Scanner scanner) {
+
+		this.connection = connection;
+		this.scanner = scanner;
+	}
+
+	void register() {
+
+		System.out.print("Enter full name: ");
+		String full_name = scanner.nextLine();
+
+		System.out.print("Enter email: ");
+		String email = scanner.nextLine();
+
+		System.out.print("Enter password: ");
+		String password = scanner.nextLine();
+
+		if (user_exist(email)) {
+			System.out.println("User Already Exists for this Email Address!!");
+			return;
+
+		}
+
+		String register_query = "INSERT INTO user(full_name,email,password) VALUES (?,?,?)";
+		try {
+			PreparedStatement prepareStatement = connection.prepareStatement(register_query);
+
+			prepareStatement.setString(1, full_name);
+			prepareStatement.setString(2, email);
+			prepareStatement.setString(3, password);
+
+			int i = prepareStatement.executeUpdate();
+			if (i > 0) {
+				System.out.println("Registration successfull!!");
+			 } 
+			else {
+				System.out.println("Registration failed!");
+			}
+
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	
+	
+	
+	
+	
+	private boolean user_exist(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}
